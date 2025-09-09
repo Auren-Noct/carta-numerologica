@@ -1,6 +1,9 @@
 {
   "appId": "com.walter-crespin.numerologia",
-  "files": ["dist-electron", "dist-react"],
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": ["build-electron", "dist-react"],
   "icon": "./desktopIcon.png",
   "mac": {
     "target": "dmg"

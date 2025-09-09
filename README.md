@@ -76,7 +76,3 @@ La aplicación estará disponible en `http://localhost:5173`. Si tienes problema
 - **Walter Marcos Crespín** - [GitHub](https://github.com/Auren-Noct) | [Email](mailto:walter.crespin49@gmail.com)
 
 ---
-
-### 📥 Versión Portable
-
-Este proyecto está diseñado para ser una aplicación web. Si estás interesado en una **versión portable para escritorio o móvil**, puedes contactar directamente al autor.

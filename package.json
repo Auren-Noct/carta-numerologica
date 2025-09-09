@@ -8,18 +8,19 @@
     "email": "walter.crespin49@gmail.com",
     "url": "https://github.com/Auren-Noct"
   },
-  "main": "dist-electron/main.js",
+  "main": "build-electron/main.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "dev:electron": "electron .",
-    "build": "tsc -b && vite build",
+    "build:frontend": "tsc -b && vite build",
+    "build:electron": "tsc --project src/electron/tsconfig.json",
+    "build:all": "pnpm run build:frontend && pnpm run build:electron",
     "lint": "eslint .",
     "preview": "vite preview",
-    "transpile:electron": "tsc --project src/electron/tsconfig.json",
-    "dist:win": "pnpm run transpile:electron && pnpm run build && electron-builder --win --x64",
-    "dist:linux": "pnpm run transpile:electron && pnpm run build && electron-builder --linux --x64",
-    "dist:mac": "pnpm run transpile:electron && pnpm run build && electron-builder --mac --arm64"
+    "dist:win": "pnpm run build:all && electron-builder --win --x64",
+    "dist:linux": "pnpm run build:all && electron-builder --linux --x64",
+    "dist:mac": "pnpm run build:all && electron-builder --mac --arm64"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

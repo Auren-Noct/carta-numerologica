@@ -8,7 +8,7 @@ const Footer = () => {
         <p className="mb-0">Basado en la técnica de **Eduardo Dharma Yoel**.</p>
 
         {/* Llamado a la acción para la versión portable */}
-        <div className="my-3">
+        {/* <div className="my-3">
           <a
             href=""
             className="btn btn-primary"
@@ -17,7 +17,7 @@ const Footer = () => {
           >
             Obtén la versión portable
           </a>
-        </div>
+        </div> */}
 
         <p className="mb-0">
           <a

@@ -3,7 +3,7 @@
     "strict": true,
     "target": "esnext",
     "module": "nodenext",
-    "outDir": "../../dist-electron",
+    "outDir": "../../build-electron",
     "skipLibCheck": true
   }
 }
