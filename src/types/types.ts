@@ -1,0 +1,26 @@
+export type Datos = {
+  nombreCompleto: string;
+  vocales: (number | null)[];
+  consonantes: (number | null)[];
+  sumaVocales: number;
+  sumaConsonantes: number;
+  reduccionVocales: number | string;
+  reduccionConsonantes: number | string;
+  fechaNumeros: number[];
+  sumaFecha: number;
+  reduccionFecha: number | string;
+  diaFecha: number | string;
+  reduccionDia: number | string;
+  sumaTemperamento: number | string;
+  reduccionTemperamento: number | string;
+  sumaIniciales: number;
+  sumaMision: number;
+  reduccionMision: number | string;
+  sumaMetaFinal: number;
+  reduccionMetaFinal: number | string;
+  numerosFrecuencia: number[];
+  numerosMasAltos: number[];
+  numerosMasBajos: number[];
+  reduccionFechaCompanero: number | string | null;
+  diaCompanero: number | string | null;
+};

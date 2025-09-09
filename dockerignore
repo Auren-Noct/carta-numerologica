@@ -1,0 +1,29 @@
+# Directorios de dependencias y de build
+node_modules
+dist
+dist-react
+dist-electron
+
+# Archivos de configuración y de entorno
+.env
+.env.local
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Archivos y directorios de control de versiones
+.git
+.gitignore
+*.md
+
+# Archivos de logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
