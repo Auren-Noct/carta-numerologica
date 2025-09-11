@@ -76,3 +76,15 @@ La aplicación estará disponible en `http://localhost:5173`. Si tienes problema
 - **Walter Marcos Crespín** - [GitHub](https://github.com/Auren-Noct) | [Email](mailto:walter.crespin49@gmail.com)
 
 ---
+
+### TODOLIST
+
+- Cambiar orden de tablas (Tira principal y abundancia y escacez primero)
+- Agregar tabla de equivalencias númericas
+- Agregar Switch (Cálculos)
+- CTA para reservar sección explicativa
+- En reducción de fecha sacar 2da fila
+- En Tira principal intercambiar 1ra y 2da fila
+- Utilizar color danger y warning
+
+---
