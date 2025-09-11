@@ -1,4 +1,0 @@
-TODOLIST:
-Agregar switches a los calculos para ocultarlos y mostrarlos de forma opcional
-Agregar Capacitor
-Agregar opción para comparar dos tablas al mismo tiempo, esto sería otra ventana/interfaz
