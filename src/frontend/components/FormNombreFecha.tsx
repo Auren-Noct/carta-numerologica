@@ -23,9 +23,15 @@ const FormNombreFecha = () => {
 
   return (
     <div className="container mx-auto my-12 p-4">
-      <h1 className="text-4xl font-bold mb-8 text-center">
+      <h1 className="text-4xl font-bold mb-3 text-center text-red-600">
         Carta Numerológica
       </h1>
+      <h6 className="text-1xl mb-8 text-center">
+        Cortesía de
+        <em>
+          <a href="http://luzdevida.xyz/numeramon/">NUMERAmón</a>
+        </em>
+      </h6>
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="mb-4">
           <label
@@ -40,6 +46,7 @@ const FormNombreFecha = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={nombreCompleto}
             onChange={(e) => setNombreCompleto(e.target.value)}
+            placeholder="Ej.: Ramón Félix Martorell"
             required
           />
         </div>
@@ -76,7 +83,7 @@ const FormNombreFecha = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Generar Tablas
         </button>
@@ -84,21 +91,6 @@ const FormNombreFecha = () => {
 
       {datosCalculados && (
         <>
-          <TablaEquivalencias
-            nombreCompleto={datosCalculados.nombreCompleto}
-            vocales={datosCalculados.vocales}
-            consonantes={datosCalculados.consonantes}
-            sumaVocales={datosCalculados.sumaVocales}
-            sumaConsonantes={datosCalculados.sumaConsonantes}
-            reduccionVocales={datosCalculados.reduccionVocales}
-            reduccionConsonantes={datosCalculados.reduccionConsonantes}
-          />
-          <TablaReduccionFecha
-            fechaNumeros={datosCalculados.fechaNumeros}
-            sumaFecha={datosCalculados.sumaFecha}
-            reduccionFecha={datosCalculados.reduccionFecha}
-            diaFecha={datosCalculados.diaFecha}
-          />
           <TablaTiraPrincipal
             diaFecha={datosCalculados.diaFecha}
             reduccionDia={datosCalculados.reduccionDia}
@@ -128,6 +120,21 @@ const FormNombreFecha = () => {
               diaCompanero={datosCalculados.diaCompanero}
             />
           )}
+          <TablaEquivalencias
+            nombreCompleto={datosCalculados.nombreCompleto}
+            vocales={datosCalculados.vocales}
+            consonantes={datosCalculados.consonantes}
+            sumaVocales={datosCalculados.sumaVocales}
+            sumaConsonantes={datosCalculados.sumaConsonantes}
+            reduccionVocales={datosCalculados.reduccionVocales}
+            reduccionConsonantes={datosCalculados.reduccionConsonantes}
+          />
+          <TablaReduccionFecha
+            fechaNumeros={datosCalculados.fechaNumeros}
+            sumaFecha={datosCalculados.sumaFecha}
+            reduccionFecha={datosCalculados.reduccionFecha}
+            diaFecha={datosCalculados.diaFecha}
+          />
         </>
       )}
     </div>

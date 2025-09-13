@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   reduccionFecha: string | number;
   diaFecha: string | number;
@@ -53,4 +55,4 @@ const TablaCompatibilidad = ({
   );
 };
 
-export default TablaCompatibilidad;
+export default React.memo(TablaCompatibilidad);

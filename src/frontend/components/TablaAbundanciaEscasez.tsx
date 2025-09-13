@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   numerosFrecuencia: number[];
   numerosMasAltos: number[];
@@ -30,7 +32,7 @@ const TablaAbundaciaEscasez = ({
           </thead>
           <tbody>
             <tr>
-              <td className="py-2 px-4 border-b border-gray-300 font-bold text-left">
+              <td className="py-2 px-4 border-b border-gray-300 font-bold">
                 Cantidad
               </td>
               {numerosFrecuencia.map((conteo, index) => {
@@ -38,7 +40,7 @@ const TablaAbundaciaEscasez = ({
                 if (numerosMasAltos.includes(index)) {
                   className += " bg-red-500 text-white";
                 } else if (numerosMasBajos.includes(index)) {
-                  className += " bg-green-500 text-white";
+                  className += " bg-yellow-500 text-white";
                 }
                 return (
                   <td key={index} className={className}>
@@ -54,4 +56,4 @@ const TablaAbundaciaEscasez = ({
   );
 };
 
-export default TablaAbundaciaEscasez;
+export default React.memo(TablaAbundaciaEscasez);

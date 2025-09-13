@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   diaFecha: string | number;
   reduccionDia: string | number;
@@ -33,15 +35,16 @@ const TablaTiraPrincipal = ({
 }: Props) => {
   const filas = [
     {
-      label: "Día de nacimiento",
-      suma: diaFecha,
-      reduccion: reduccionDia,
-    },
-    {
       label: "Camino de vida o sendero",
       suma: sumaFecha,
       reduccion: reduccionFecha,
     },
+    {
+      label: "Día de nacimiento",
+      suma: diaFecha,
+      reduccion: reduccionDia,
+    },
+
     {
       label: "Camino del alma",
       suma: sumaVocales,
@@ -101,5 +104,4 @@ const TablaTiraPrincipal = ({
     </div>
   );
 };
-
-export default TablaTiraPrincipal;
+export default React.memo(TablaTiraPrincipal);

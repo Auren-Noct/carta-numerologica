@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   nombreCompleto: string;
   vocales: (number | null)[];
@@ -129,5 +131,4 @@ const TablaEquivalencias = ({
     </div>
   );
 };
-
-export default TablaEquivalencias;
+export default React.memo(TablaEquivalencias);

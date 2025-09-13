@@ -1,3 +1,5 @@
+import React from "react";
+
 type Props = {
   fechaNumeros: number[];
   sumaFecha: number;
@@ -43,7 +45,7 @@ const TablaReduccionFecha = ({
                 </td>
               ))}
             </tr>
-            <tr>
+            {/* <tr>
               {Array.from({ length: datosFila1.length - 1 }, (_, index) => (
                 <td
                   key={index}
@@ -53,12 +55,11 @@ const TablaReduccionFecha = ({
               <td className="py-2 px-4 border-b border-gray-300 font-bold">
                 {diaFecha}
               </td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </div>
     </div>
   );
 };
-
-export default TablaReduccionFecha;
+export default React.memo(TablaReduccionFecha);
