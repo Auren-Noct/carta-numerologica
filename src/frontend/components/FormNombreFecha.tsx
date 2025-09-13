@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { useCalculosNumerologicos } from "../hooks/useCalculosNumerologicos";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import TablaEquivalencias from "./TablaEquivalencias";
 import TablaReduccionFecha from "./TablaReduccionFecha";
 import TablaTiraPrincipal from "./TablaTiraPrincipal";
@@ -25,50 +22,99 @@ const FormNombreFecha = () => {
   };
 
   return (
-    <Container className="my-5">
-      <h1 className="mb-4 text-center">Carta Numerológica</h1>
-      <Form onSubmit={handleSubmit} className="mb-4">
-        <Form.Group className="mb-3" controlId="formNombre">
-          <Form.Label>Nombre Completo:</Form.Label>
-          <Form.Control
+    <div className="container mx-auto my-12 p-4">
+      <h1 className="text-4xl font-bold mb-8 text-center">
+        Carta Numerológica
+      </h1>
+      <form onSubmit={handleSubmit} className="mb-8">
+        <div className="mb-4">
+          <label
+            htmlFor="formNombre"
+            className="block text-gray-700 font-bold mb-2"
+          >
+            Nombre Completo:
+          </label>
+          <input
+            id="formNombre"
             type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={nombreCompleto}
             onChange={(e) => setNombreCompleto(e.target.value)}
             required
           />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formFecha">
-          <Form.Label>Fecha:</Form.Label>
-          <Form.Control
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="formFecha"
+            className="block text-gray-700 font-bold mb-2"
+          >
+            Fecha:
+          </label>
+          <input
+            id="formFecha"
             type="date"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}
             required
           />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formFechaCompanero">
-          <Form.Label>Fecha de la pareja (Opcional):</Form.Label>
-          <Form.Control
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="formFechaCompanero"
+            className="block text-gray-700 font-bold mb-2"
+          >
+            Fecha de la pareja (Opcional):
+          </label>
+          <input
+            id="formFechaCompanero"
             type="date"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={fechaCompanero}
             onChange={(e) => setFechaCompanero(e.target.value)}
           />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
           Generar Tablas
-        </Button>
-      </Form>
+        </button>
+      </form>
 
       {datosCalculados && (
         <>
-          <TablaEquivalencias {...datosCalculados} />
+          <TablaEquivalencias
+            nombreCompleto={datosCalculados.nombreCompleto}
+            vocales={datosCalculados.vocales}
+            consonantes={datosCalculados.consonantes}
+            sumaVocales={datosCalculados.sumaVocales}
+            sumaConsonantes={datosCalculados.sumaConsonantes}
+            reduccionVocales={datosCalculados.reduccionVocales}
+            reduccionConsonantes={datosCalculados.reduccionConsonantes}
+          />
           <TablaReduccionFecha
             fechaNumeros={datosCalculados.fechaNumeros}
             sumaFecha={datosCalculados.sumaFecha}
             reduccionFecha={datosCalculados.reduccionFecha}
             diaFecha={datosCalculados.diaFecha}
           />
-          <TablaTiraPrincipal {...datosCalculados} />
+          <TablaTiraPrincipal
+            diaFecha={datosCalculados.diaFecha}
+            reduccionDia={datosCalculados.reduccionDia}
+            sumaFecha={datosCalculados.sumaFecha}
+            reduccionFecha={datosCalculados.reduccionFecha}
+            sumaVocales={datosCalculados.sumaVocales}
+            reduccionVocales={datosCalculados.reduccionVocales}
+            sumaConsonantes={datosCalculados.sumaConsonantes}
+            reduccionConsonantes={datosCalculados.reduccionConsonantes}
+            sumaTemperamento={datosCalculados.sumaTemperamento}
+            reduccionTemperamento={datosCalculados.reduccionTemperamento}
+            sumaMision={datosCalculados.sumaMision}
+            reduccionMision={datosCalculados.reduccionMision}
+            sumaMetaFinal={datosCalculados.sumaMetaFinal}
+            reduccionMetaFinal={datosCalculados.reduccionMetaFinal}
+          />
           <TablaAbundanciaEscasez
             numerosFrecuencia={datosCalculados.numerosFrecuencia}
             numerosMasAltos={datosCalculados.numerosMasAltos}
@@ -84,7 +130,7 @@ const FormNombreFecha = () => {
           )}
         </>
       )}
-    </Container>
+    </div>
   );
 };
 

@@ -1,17 +1,17 @@
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-3 mt-5">
-      <div className="container text-center">
-        <p className="mb-0">
+    <footer className="bg-gray-800 text-white py-6 mt-8">
+      <div className="container mx-auto text-center px-4">
+        <p className="mb-2">
           &copy; {new Date().getFullYear()} Creado por Walter Marcos Crespín.
         </p>
-        <p className="mb-0">Basado en la técnica de **Eduardo Dharma Yoel**.</p>
+        <p className="mb-2">Basado en la técnica de **Eduardo Dharma Yoel**.</p>
 
         {/* Llamado a la acción para la versión portable */}
         {/* <div className="my-3">
           <a
             href=""
-            className="btn btn-primary"
+            className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -22,7 +22,7 @@ const Footer = () => {
         <p className="mb-0">
           <a
             href="mailto:walter.crespin49@gmail.com"
-            className="text-white text-decoration-none mx-2"
+            className="text-white hover:underline mx-2"
           >
             walter.crespin49@gmail.com
           </a>
@@ -30,7 +30,7 @@ const Footer = () => {
             href="https://github.com/Auren-Noct"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white text-decoration-none mx-2"
+            className="text-white hover:underline mx-2"
           >
             GitHub
           </a>

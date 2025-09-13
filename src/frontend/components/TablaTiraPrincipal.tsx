@@ -1,5 +1,3 @@
-import Table from "react-bootstrap/Table";
-
 type Props = {
   diaFecha: string | number;
   reduccionDia: string | number;
@@ -44,7 +42,6 @@ const TablaTiraPrincipal = ({
       suma: sumaFecha,
       reduccion: reduccionFecha,
     },
-
     {
       label: "Camino del alma",
       suma: sumaVocales,
@@ -73,29 +70,35 @@ const TablaTiraPrincipal = ({
   ];
 
   return (
-    <>
-      <h3 className="mt-5 mb-3">Tira principal</h3>
-      <Table striped bordered responsive className="text-center">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Suma</th>
-            <th>Reducción</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filas.map((fila, index) => (
-            <tr key={index}>
-              <td>
-                <strong>{fila.label}</strong>
-              </td>
-              <td>{fila.suma}</td>
-              <td>{fila.reduccion}</td>
+    <div className="my-8">
+      <h3 className="text-2xl font-semibold mb-4">Tira principal</h3>
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto border-collapse border border-gray-300 bg-white text-center">
+          <thead className="bg-gray-200">
+            <tr>
+              <th className="py-2 px-4 border-b border-gray-300"></th>
+              <th className="py-2 px-4 border-b border-gray-300">Suma</th>
+              <th className="py-2 px-4 border-b border-gray-300">Reducción</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-    </>
+          </thead>
+          <tbody>
+            {filas.map((fila, index) => (
+              <tr key={index}>
+                <td className="py-2 px-4 border-b border-gray-300 text-left font-bold">
+                  {fila.label}
+                </td>
+                <td className="py-2 px-4 border-b border-gray-300">
+                  {fila.suma}
+                </td>
+                <td className="py-2 px-4 border-b border-gray-300">
+                  {fila.reduccion}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 

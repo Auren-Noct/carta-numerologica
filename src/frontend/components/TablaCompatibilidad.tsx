@@ -1,5 +1,3 @@
-import Table from "react-bootstrap/Table";
-
 type Props = {
   reduccionFecha: string | number;
   diaFecha: string | number;
@@ -14,34 +12,44 @@ const TablaCompatibilidad = ({
   diaCompanero,
 }: Props) => {
   return (
-    <>
-      <h3 className="mt-5 mb-3">Compatibilidad de pareja</h3>
-      <Table striped bordered responsive className="text-center">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Consultante</th>
-            <th>Pareja</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <strong>Camino de vida</strong>
-            </td>
-            <td>{reduccionFecha}</td>
-            <td>{reduccionFechaCompanero}</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>Día de nacimiento</strong>
-            </td>
-            <td>{diaFecha}</td>
-            <td>{diaCompanero}</td>
-          </tr>
-        </tbody>
-      </Table>
-    </>
+    <div className="my-8">
+      <h3 className="text-2xl font-semibold mb-4">Compatibilidad de pareja</h3>
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto border-collapse border border-gray-300 bg-white text-center">
+          <thead className="bg-gray-200">
+            <tr>
+              <th className="py-2 px-4 border-b border-gray-300"></th>
+              <th className="py-2 px-4 border-b border-gray-300">
+                Consultante
+              </th>
+              <th className="py-2 px-4 border-b border-gray-300">Pareja</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-300 text-left font-bold">
+                Camino de vida
+              </td>
+              <td className="py-2 px-4 border-b border-gray-300">
+                {reduccionFecha}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-300">
+                {reduccionFechaCompanero}
+              </td>
+            </tr>
+            <tr>
+              <td className="py-2 px-4 border-b border-gray-300 text-left font-bold">
+                Día de nacimiento
+              </td>
+              <td className="py-2 px-4 border-b border-gray-300">{diaFecha}</td>
+              <td className="py-2 px-4 border-b border-gray-300">
+                {diaCompanero}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 

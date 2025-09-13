@@ -1,6 +1,3 @@
-import Table from "react-bootstrap/Table";
-import useMediaQuery from "../hooks/useMediaQuery";
-
 type Props = {
   nombreCompleto: string;
   vocales: (number | null)[];
@@ -20,101 +17,116 @@ const TablaEquivalencias = ({
   sumaConsonantes,
   reduccionConsonantes,
 }: Props) => {
-  // Usamos el mismo breakpoint para activar el modo móvil
-  const isMobile = useMediaQuery("(max-width: 767px)");
   const nombreArray = nombreCompleto.split("");
 
-  // Lógica para la vista de tabla normal (escritorio)
-  const renderDesktopTable = () => {
-    return (
-      <div className="d-none d-md-block">
-        <Table striped bordered responsive className="text-center">
-          <thead>
+  return (
+    <div className="my-8">
+      <h3 className="text-2xl font-semibold mb-4">Equivalencias numéricas</h3>
+
+      {/* Tabla para escritorio y pantallas grandes */}
+      <div className="hidden md:block overflow-x-auto">
+        <table className="min-w-full table-auto border-collapse border border-gray-300 bg-white">
+          <thead className="bg-gray-200">
             <tr>
-              <th></th>
+              <th className="py-2 px-4 border-b border-gray-300"></th>
               {nombreArray.map((char, index) => (
-                <th key={index}>{char.toUpperCase()}</th>
+                <th key={index} className="py-2 px-4 border-b border-gray-300">
+                  {char.toUpperCase()}
+                </th>
               ))}
-              <th></th>
-              <th>Suma</th>
-              <th>Reducción</th>
+              <th className="py-2 px-4 border-b border-gray-300"></th>
+              <th className="py-2 px-4 border-b border-gray-300">Suma</th>
+              <th className="py-2 px-4 border-b border-gray-300">Reducción</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
-                <strong>Vocales</strong>
+              <td className="py-2 px-4 border-b border-gray-300 font-bold">
+                Vocales
               </td>
               {vocales.map((valor, index) => (
-                <td key={index}>{valor}</td>
+                <td key={index} className="py-2 px-4 border-b border-gray-300">
+                  {valor}
+                </td>
               ))}
-              <td></td>
-              <td>{sumaVocales}</td>
-              <td>{reduccionVocales}</td>
+              <td className="py-2 px-4 border-b border-gray-300"></td>
+              <td className="py-2 px-4 border-b border-gray-300">
+                {sumaVocales}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-300">
+                {reduccionVocales}
+              </td>
             </tr>
             <tr>
-              <td>
-                <strong>Consonantes</strong>
+              <td className="py-2 px-4 border-b border-gray-300 font-bold">
+                Consonantes
               </td>
               {consonantes.map((valor, index) => (
-                <td key={index}>{valor}</td>
+                <td key={index} className="py-2 px-4 border-b border-gray-300">
+                  {valor}
+                </td>
               ))}
-              <td></td>
-              <td>{sumaConsonantes}</td>
-              <td>{reduccionConsonantes}</td>
+              <td className="py-2 px-4 border-b border-gray-300"></td>
+              <td className="py-2 px-4 border-b border-gray-300">
+                {sumaConsonantes}
+              </td>
+              <td className="py-2 px-4 border-b border-gray-300">
+                {reduccionConsonantes}
+              </td>
             </tr>
           </tbody>
-        </Table>
+        </table>
       </div>
-    );
-  };
 
-  // Lógica para la vista transpuesta (móvil)
-  const renderMobileTable = () => {
-    return (
-      <div className="d-block d-md-none">
-        <Table striped bordered responsive className="text-center">
-          <thead>
+      {/* Tabla para móviles */}
+      <div className="block md:hidden overflow-x-auto">
+        <table className="min-w-full table-auto border-collapse border border-gray-300 bg-white">
+          <thead className="bg-gray-200">
             <tr>
-              <th>Letra</th>
-              <th>Vocales</th>
-              <th>Consonantes</th>
+              <th className="py-2 px-4 border-b border-gray-300">Letra</th>
+              <th className="py-2 px-4 border-b border-gray-300">Vocales</th>
+              <th className="py-2 px-4 border-b border-gray-300">
+                Consonantes
+              </th>
             </tr>
           </thead>
           <tbody>
             {nombreArray.map((char, index) => (
-              <tr key={index}>
-                <th scope="row">{char.toUpperCase()}</th>
-                <td>{vocales[index]}</td>
-                <td>{consonantes[index]}</td>
+              <tr key={index} className="border-b border-gray-300">
+                <th
+                  scope="row"
+                  className="py-2 px-4 text-left font-normal border-r border-gray-300"
+                >
+                  {char.toUpperCase()}
+                </th>
+                <td className="py-2 px-4 text-center border-r border-gray-300">
+                  {vocales[index]}
+                </td>
+                <td className="py-2 px-4 text-center">{consonantes[index]}</td>
               </tr>
             ))}
-            {/* Filas para la suma y reducción al final de la tabla */}
-            <tr>
-              <th colSpan={1} className="text-end">
+            <tr className="border-b border-gray-300">
+              <th className="py-2 px-4 text-right font-bold border-r border-gray-300">
                 Suma
               </th>
-              <td colSpan={1}>{sumaVocales}</td>
-              <td colSpan={1}>{sumaConsonantes}</td>
+              <td className="py-2 px-4 text-center border-r border-gray-300">
+                {sumaVocales}
+              </td>
+              <td className="py-2 px-4 text-center">{sumaConsonantes}</td>
             </tr>
             <tr>
-              <th colSpan={1} className="text-end">
+              <th className="py-2 px-4 text-right font-bold border-r border-gray-300">
                 Reducción
               </th>
-              <td colSpan={1}>{reduccionVocales}</td>
-              <td colSpan={1}>{reduccionConsonantes}</td>
+              <td className="py-2 px-4 text-center border-r border-gray-300">
+                {reduccionVocales}
+              </td>
+              <td className="py-2 px-4 text-center">{reduccionConsonantes}</td>
             </tr>
           </tbody>
-        </Table>
+        </table>
       </div>
-    );
-  };
-
-  return (
-    <>
-      <h3 className="mt-5 mb-3">Equivalencias numéricas</h3>
-      {isMobile ? renderMobileTable() : renderDesktopTable()}
-    </>
+    </div>
   );
 };
 

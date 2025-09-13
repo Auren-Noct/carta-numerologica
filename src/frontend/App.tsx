@@ -3,8 +3,8 @@ import FormNombreFecha from "./components/FormNombreFecha";
 
 function App() {
   return (
-    <div className="d-flex flex-column min-vh-100">
-      <main className="flex-grow-1">
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">
         <FormNombreFecha />
       </main>
       <Footer />
