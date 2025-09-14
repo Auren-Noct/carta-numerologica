@@ -1,55 +1,93 @@
 const TablaConversion = () => {
   return (
     <div className="my-8">
-      <h3 className="text-2xl font-semibold mb-4">Tabla de conversión</h3>
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-auto border-collapse border border-gray-300 bg-white text-center">
-          <thead className="bg-gray-200">
+      <h3 className="text-2xl font-semibold mb-4 text-teal-700">
+        Tabla de conversión
+      </h3>
+      <div className="overflow-x-auto rounded-lg shadow-md">
+        <table className="min-w-full table-auto border-collapse border-b-2 border-orange-400 bg-white text-center">
+          <thead className="bg-teal-700 text-white">
             <tr>
-              <th className="py-2 px-4 border-b border-gray-300">1</th>
-              <th className="py-2 px-4 border-b border-gray-300">2</th>
-              <th className="py-2 px-4 border-b border-gray-300">3</th>
-              <th className="py-2 px-4 border-b border-gray-300">4</th>
-              <th className="py-2 px-4 border-b border-gray-300">5</th>
-              <th className="py-2 px-4 border-b border-gray-300">6</th>
-              <th className="py-2 px-4 border-b border-gray-300">7</th>
-              <th className="py-2 px-4 border-b border-gray-300">8</th>
-              <th className="py-2 px-4 border-b border-gray-300">9</th>
+              <th className="py-2 px-4 rounded-tl-lg">1</th>
+              <th className="py-2 px-4">2</th>
+              <th className="py-2 px-4">3</th>
+              <th className="py-2 px-4">4</th>
+              <th className="py-2 px-4">5</th>
+              <th className="py-2 px-4">6</th>
+              <th className="py-2 px-4">7</th>
+              <th className="py-2 px-4">8</th>
+              <th className="py-2 px-4 rounded-tr-lg">9</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="py-2 px-4 border-b border-gray-300">A</td>
-              <td className="py-2 px-4 border-b border-gray-300">B</td>
-              <td className="py-2 px-4 border-b border-gray-300">C</td>
-              <td className="py-2 px-4 border-b border-gray-300">D</td>
-              <td className="py-2 px-4 border-b border-gray-300">E</td>
-              <td className="py-2 px-4 border-b border-gray-300">F</td>
-              <td className="py-2 px-4 border-b border-gray-300">G</td>
-              <td className="py-2 px-4 border-b border-gray-300">H</td>
-              <td className="py-2 px-4 border-b border-gray-300">I</td>
+            <tr className="hover:bg-teal-50 transition-colors duration-200">
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                A
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                B
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                C
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                D
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                E
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                F
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                G
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                H
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                I
+              </td>
             </tr>
-            <tr>
-              <td className="py-2 px-4 border-b border-gray-300">J</td>
-              <td className="py-2 px-4 border-b border-gray-300">K</td>
-              <td className="py-2 px-4 border-b border-gray-300">L</td>
-              <td className="py-2 px-4 border-b border-gray-300">M</td>
-              <td className="py-2 px-4 border-b border-gray-300">N/Ñ</td>
-              <td className="py-2 px-4 border-b border-gray-300">O</td>
-              <td className="py-2 px-4 border-b border-gray-300">P</td>
-              <td className="py-2 px-4 border-b border-gray-300">Q</td>
-              <td className="py-2 px-4 border-b border-gray-300">R</td>
+            <tr className="hover:bg-teal-50 transition-colors duration-200">
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                J
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                K
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                L
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                M
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                N/Ñ
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                O
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                P
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                Q
+              </td>
+              <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
+                R
+              </td>
             </tr>
-            <tr>
-              <td className="py-2 px-4 border-gray-300">S</td>
-              <td className="py-2 px-4 border-gray-300">T</td>
-              <td className="py-2 px-4 border-gray-300">U</td>
-              <td className="py-2 px-4 border-gray-300">V</td>
-              <td className="py-2 px-4 border-gray-300">W</td>
-              <td className="py-2 px-4 border-gray-300">X</td>
-              <td className="py-2 px-4 border-gray-300">Y</td>
-              <td className="py-2 px-4 border-gray-300">Z</td>
-              <td className="py-2 px-4 border-gray-300"></td>
+            <tr className="hover:bg-teal-50 transition-colors duration-200">
+              <td className="py-2 px-4 text-gray-700">S</td>
+              <td className="py-2 px-4 text-gray-700">T</td>
+              <td className="py-2 px-4 text-gray-700">U</td>
+              <td className="py-2 px-4 text-gray-700">V</td>
+              <td className="py-2 px-4 text-gray-700">W</td>
+              <td className="py-2 px-4 text-gray-700">X</td>
+              <td className="py-2 px-4 text-gray-700">Y</td>
+              <td className="py-2 px-4 text-gray-700">Z</td>
+              <td className="py-2 px-4 text-gray-700"></td>
             </tr>
           </tbody>
         </table>

@@ -15,16 +15,16 @@ const TablaAbundaciaEscasez = ({
 
   return (
     <div className="my-8">
-      <h3 className="text-2xl font-semibold mb-4">Abundancia y escasez</h3>
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-auto border-collapse border border-gray-300 bg-white text-center">
-          <thead className="bg-gray-200">
+      <h3 className="text-2xl font-semibold mb-4 text-teal-700">
+        Abundancia y escasez
+      </h3>
+      <div className="overflow-x-auto rounded-lg shadow-md">
+        <table className="min-w-full table-auto border-collapse border-b-2 border-orange-400 bg-white text-center">
+          <thead className="bg-teal-700 text-white">
             <tr>
-              <td className="py-2 px-4 border-b border-gray-300 font-bold">
-                Dígito
-              </td>
+              <td className="py-2 px-4 font-bold rounded-tl-lg">Dígito</td>
               {numeros.map((num) => (
-                <th key={num} className="py-2 px-4 border-b border-gray-300">
+                <th key={num} className="py-2 px-4">
                   {num}
                 </th>
               ))}
@@ -32,15 +32,15 @@ const TablaAbundaciaEscasez = ({
           </thead>
           <tbody>
             <tr>
-              <td className="py-2 px-4 border-b border-gray-300 font-bold">
+              <td className="py-2 px-4 border-b border-gray-200 font-bold text-gray-800">
                 Cantidad
               </td>
               {numerosFrecuencia.map((conteo, index) => {
-                let className = "py-2 px-4 border-b border-gray-300";
+                let className = "py-2 px-4 border-b border-gray-200";
                 if (numerosMasAltos.includes(index)) {
-                  className += " bg-red-500 text-white";
+                  className += " bg-red-600 text-white font-bold";
                 } else if (numerosMasBajos.includes(index)) {
-                  className += " bg-yellow-500 text-white";
+                  className += " bg-orange-400 text-white font-bold";
                 }
                 return (
                   <td key={index} className={className}>

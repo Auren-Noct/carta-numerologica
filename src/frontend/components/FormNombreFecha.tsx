@@ -6,6 +6,7 @@ import TablaTiraPrincipal from "./TablaTiraPrincipal";
 import TablaAbundanciaEscasez from "./TablaAbundanciaEscasez";
 import TablaCompatibilidad from "./TablaCompatibilidad";
 import TablaConversion from "./TablaConversion";
+import CTA from "./CTA";
 
 const FormNombreFecha = () => {
   const [nombreCompleto, setNombreCompleto] = useState("");
@@ -36,14 +37,14 @@ const FormNombreFecha = () => {
         <div className="mb-4">
           <label
             htmlFor="formNombre"
-            className="block text-gray-700 font-bold mb-2"
+            className="block text-gray-900 font-bold mb-2"
           >
             Nombre Completo:
           </label>
           <input
             id="formNombre"
             type="text"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow-sm appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:border-teal-500 focus:shadow-outline-teal"
             value={nombreCompleto}
             onChange={(e) => setNombreCompleto(e.target.value)}
             placeholder="Ej.: Ramón Félix Martorell"
@@ -53,14 +54,14 @@ const FormNombreFecha = () => {
         <div className="mb-4">
           <label
             htmlFor="formFecha"
-            className="block text-gray-700 font-bold mb-2"
+            className="block text-gray-900 font-bold mb-2"
           >
             Fecha:
           </label>
           <input
             id="formFecha"
             type="date"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow-sm appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:border-teal-500 focus:shadow-outline-teal"
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}
             required
@@ -69,21 +70,21 @@ const FormNombreFecha = () => {
         <div className="mb-4">
           <label
             htmlFor="formFechaCompanero"
-            className="block text-gray-700 font-bold mb-2"
+            className="block text-gray-900 font-bold mb-2"
           >
             Fecha de la pareja (Opcional):
           </label>
           <input
             id="formFechaCompanero"
             type="date"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow-sm appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:border-teal-500 focus:shadow-outline-teal"
             value={fechaCompanero}
             onChange={(e) => setFechaCompanero(e.target.value)}
           />
         </div>
         <button
           type="submit"
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-red"
         >
           Generar Tablas
         </button>
@@ -120,6 +121,7 @@ const FormNombreFecha = () => {
               diaCompanero={datosCalculados.diaCompanero}
             />
           )}
+          {datosCalculados && <CTA />}
           <div className="mt-16 mb-8 flex items-center">
             <label className="inline-flex items-center cursor-pointer">
               <input
@@ -129,8 +131,8 @@ const FormNombreFecha = () => {
                 checked={mostrarCalculos}
                 onChange={(e) => setMostrarCalculos(e.target.checked)}
               />
-              <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-              <span className="ms-3 text-sm font-medium text-gray-700">
+              <div className="relative w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+              <span className="ms-3 text-sm font-medium text-gray-900">
                 Mostrar cálculos adicionales
               </span>
             </label>

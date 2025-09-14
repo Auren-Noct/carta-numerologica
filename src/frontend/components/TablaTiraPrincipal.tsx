@@ -73,26 +73,31 @@ const TablaTiraPrincipal = ({
 
   return (
     <div className="my-8">
-      <h3 className="text-2xl font-semibold mb-4">Tira principal</h3>
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-auto border-collapse border border-gray-300 bg-white text-center">
-          <thead className="bg-gray-200">
+      <h3 className="text-2xl font-semibold mb-4 text-teal-700">
+        Tira principal
+      </h3>
+      <div className="overflow-x-auto rounded-lg shadow-md">
+        <table className="min-w-full table-auto border-collapse border-b-2 border-orange-400 bg-white text-center">
+          <thead className="bg-teal-700 text-white">
             <tr>
-              <th className="py-2 px-4 border-b border-gray-300"></th>
-              <th className="py-2 px-4 border-b border-gray-300">Suma</th>
-              <th className="py-2 px-4 border-b border-gray-300">Reducción</th>
+              <th className="py-3 px-4 text-left font-bold rounded-tl-lg"></th>
+              <th className="py-3 px-4 font-bold">Suma</th>
+              <th className="py-3 px-4 font-bold rounded-tr-lg">Reducción</th>
             </tr>
           </thead>
           <tbody>
             {filas.map((fila, index) => (
-              <tr key={index}>
-                <td className="py-2 px-4 border-b border-gray-300 text-left font-bold">
+              <tr
+                key={index}
+                className="hover:bg-teal-50 transition-colors duration-200"
+              >
+                <td className="py-2 px-4 border-b border-gray-200 text-left font-semibold text-gray-800">
                   {fila.label}
                 </td>
-                <td className="py-2 px-4 border-b border-gray-300">
+                <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
                   {fila.suma}
                 </td>
-                <td className="py-2 px-4 border-b border-gray-300">
+                <td className="py-2 px-4 border-b border-gray-200 text-gray-700">
                   {fila.reduccion}
                 </td>
               </tr>

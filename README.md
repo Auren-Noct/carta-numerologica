@@ -36,7 +36,7 @@ Para ejecutar el proyecto en tu máquina local, tienes dos opciones:
 1.  **Clona el repositorio:**
 
     ```bash
-    git clone [https://github.com/Auren-Noct/calculadora-numerologica.git](https://github.com/Auren-Noct/calculadora-numerologica.git)
+    git clone https://github.com/Auren-Noct/calculadora-numerologica.git
     cd calculadora-numerologica
     ```
 
@@ -52,7 +52,7 @@ La aplicación estará disponible en `http://localhost:5173`.
 1.  **Clona el repositorio:**
 
     ```bash
-    git clone [https://github.com/Auren-Noct/calculadora-numerologica.git](https://github.com/Auren-Noct/calculadora-numerologica.git)
+    git clone https://github.com/Auren-Noct/calculadora-numerologica.git
     cd calculadora-numerologica
     ```
 
@@ -79,8 +79,7 @@ La aplicación estará disponible en `http://localhost:5173`. Si tienes problema
 
 ### TODOLIST
 
-- CTA para reservar sesión explicativa
-- Continuar el Header (agregar logo h1,h6)
-- Agregar Footer con checkout para donaciones al Footer
+- Agregar Logo y background a la página
+- Agregar link del checkout de donaciones
 
 ---
