@@ -4,14 +4,12 @@ type Props = {
   fechaNumeros: number[];
   sumaFecha: number;
   reduccionFecha: string | number;
-  diaFecha: string | number;
 };
 
 const TablaReduccionFecha = ({
   fechaNumeros,
   sumaFecha,
   reduccionFecha,
-  diaFecha,
 }: Props) => {
   const datosFila1 = [...fechaNumeros, sumaFecha, reduccionFecha];
 

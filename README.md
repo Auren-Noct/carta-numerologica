@@ -22,7 +22,7 @@ Este proyecto no es una herramienta de numerología general, sino una calculador
 - **React**: La biblioteca principal para la interfaz de usuario.
 - **TypeScript**: Para un código más robusto y escalable.
 - **Vite**: Un _build tool_ rápido para el entorno de desarrollo.
-- **React-Bootstrap**: Para el diseño de la interfaz de usuario.
+- **TailWind**: Utilizado para el diseño y la estilización de la interfaz de usuario.
 - **Docker**: Para un entorno de desarrollo consistente.
 
 ---
@@ -79,12 +79,8 @@ La aplicación estará disponible en `http://localhost:5173`. Si tienes problema
 
 ### TODOLIST
 
-- Cambiar orden de tablas (Tira principal y abundancia y escacez primero)
-- Agregar tabla de equivalencias númericas
-- Agregar Switch (Cálculos)
-- CTA para reservar sección explicativa
-- En reducción de fecha sacar 2da fila
-- En Tira principal intercambiar 1ra y 2da fila
-- Utilizar color danger y warning
+- CTA para reservar sesión explicativa
+- Continuar el Header (agregar logo h1,h6)
+- Agregar Footer con checkout para donaciones al Footer
 
 ---

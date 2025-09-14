@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCalculosNumerologicos } from "../hooks/useCalculosNumerologicos";
 import TablaEquivalencias from "./TablaEquivalencias";
 import TablaReduccionFecha from "./TablaReduccionFecha";
 import TablaTiraPrincipal from "./TablaTiraPrincipal";
 import TablaAbundanciaEscasez from "./TablaAbundanciaEscasez";
 import TablaCompatibilidad from "./TablaCompatibilidad";
+import TablaConversion from "./TablaConversion";
 
 const FormNombreFecha = () => {
   const [nombreCompleto, setNombreCompleto] = useState("");
   const [fecha, setFecha] = useState("");
   const [fechaCompanero, setFechaCompanero] = useState("");
+  const [mostrarCalculos, setMostrarCalculos] = useState(() => {
+    const valorPersistido = localStorage.getItem("mostrarCalculos");
+    return valorPersistido !== null ? JSON.parse(valorPersistido) : false;
+  });
 
   const datosCalculados = useCalculosNumerologicos(
     nombreCompleto,
@@ -17,21 +22,16 @@ const FormNombreFecha = () => {
     fechaCompanero
   );
 
+  useEffect(() => {
+    localStorage.setItem("mostrarCalculos", JSON.stringify(mostrarCalculos));
+  }, [mostrarCalculos]);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
   return (
     <div className="container mx-auto my-12 p-4">
-      <h1 className="text-4xl font-bold mb-3 text-center text-red-600">
-        Carta Numerológica
-      </h1>
-      <h6 className="text-1xl mb-8 text-center">
-        Cortesía de
-        <em>
-          <a href="http://luzdevida.xyz/numeramon/">NUMERAmón</a>
-        </em>
-      </h6>
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="mb-4">
           <label
@@ -120,21 +120,40 @@ const FormNombreFecha = () => {
               diaCompanero={datosCalculados.diaCompanero}
             />
           )}
-          <TablaEquivalencias
-            nombreCompleto={datosCalculados.nombreCompleto}
-            vocales={datosCalculados.vocales}
-            consonantes={datosCalculados.consonantes}
-            sumaVocales={datosCalculados.sumaVocales}
-            sumaConsonantes={datosCalculados.sumaConsonantes}
-            reduccionVocales={datosCalculados.reduccionVocales}
-            reduccionConsonantes={datosCalculados.reduccionConsonantes}
-          />
-          <TablaReduccionFecha
-            fechaNumeros={datosCalculados.fechaNumeros}
-            sumaFecha={datosCalculados.sumaFecha}
-            reduccionFecha={datosCalculados.reduccionFecha}
-            diaFecha={datosCalculados.diaFecha}
-          />
+          <div className="mt-16 mb-8 flex items-center">
+            <label className="inline-flex items-center cursor-pointer">
+              <input
+                id="toggleCalculos"
+                type="checkbox"
+                className="sr-only peer"
+                checked={mostrarCalculos}
+                onChange={(e) => setMostrarCalculos(e.target.checked)}
+              />
+              <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+              <span className="ms-3 text-sm font-medium text-gray-700">
+                Mostrar cálculos adicionales
+              </span>
+            </label>
+          </div>
+          {mostrarCalculos && (
+            <>
+              <TablaEquivalencias
+                nombreCompleto={datosCalculados.nombreCompleto}
+                vocales={datosCalculados.vocales}
+                consonantes={datosCalculados.consonantes}
+                sumaVocales={datosCalculados.sumaVocales}
+                sumaConsonantes={datosCalculados.sumaConsonantes}
+                reduccionVocales={datosCalculados.reduccionVocales}
+                reduccionConsonantes={datosCalculados.reduccionConsonantes}
+              />
+              <TablaReduccionFecha
+                fechaNumeros={datosCalculados.fechaNumeros}
+                sumaFecha={datosCalculados.sumaFecha}
+                reduccionFecha={datosCalculados.reduccionFecha}
+              />
+              <TablaConversion />
+            </>
+          )}
         </>
       )}
     </div>

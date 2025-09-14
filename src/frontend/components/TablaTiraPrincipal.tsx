@@ -44,7 +44,6 @@ const TablaTiraPrincipal = ({
       suma: diaFecha,
       reduccion: reduccionDia,
     },
-
     {
       label: "Camino del alma",
       suma: sumaVocales,
