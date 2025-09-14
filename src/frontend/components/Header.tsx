@@ -1,7 +1,7 @@
 const Header = () => (
   <header className="bg-teal-700 p-4 shadow-lg text-center">
-    <div className="container mx-auto">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-red-600 mb-2">
+    <div className="container mx-auto my-16">
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-2">
         Carta Numerológica
       </h1>
       <h6 className="text-sm font-medium text-gray-200">

@@ -77,9 +77,15 @@ La aplicación estará disponible en `http://localhost:5173`. Si tienes problema
 
 ---
 
+### 🔗 Enlaces
+
+- **Demo en GitHub Pages:** [Auren-Noct.github.io/carta-numerologica](https://auren-noct.github.io/carta-numerologica)
+- **Sitio oficial:** [luzdevida.xyz/carta-numerologica](https://luzdevida.xyz/carta-numerologica)
+
+---
+
 ### TODOLIST
 
 - Agregar Logo y background a la página
-- Agregar link del checkout de donaciones
 
 ---

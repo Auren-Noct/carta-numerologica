@@ -4,17 +4,17 @@ const Footer = () => {
       <div className="container mx-auto text-center px-4">
         <div className="mb-4">
           <p className="text-sm font-medium">
-            ¿Te ha gustado la app? ¡Apoya su desarrollo!
+            ¿Te ha servido la app? Mantenla viva con tu donación.
           </p>
         </div>
 
         <a
-          href="TU_ENLACE_DE_DONACION"
+          href="https://link.mercadopago.com.ar/waltercrespin"
           className="inline-block bg-white text-orange-400 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 mb-6 shadow-lg"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Invítame un café ☕
+          💰 Reconoce el valor 💰
         </a>
 
         <hr className="border-t border-orange-300 mb-6" />
