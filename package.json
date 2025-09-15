@@ -23,7 +23,7 @@
     "dist:linux": "pnpm run build:all && electron-builder --linux --x64",
     "dist:mac": "pnpm run build:all && electron-builder --mac --arm64",
     "predeploy": "cross-env GH_PAGES=true pnpm run build:frontend",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist-react"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
