@@ -23,7 +23,7 @@
     "dist:linux": "pnpm run build:all && electron-builder --linux --x64",
     "dist:mac": "pnpm run build:all && electron-builder --mac --arm64",
     "predeploy": "cross-env GH_PAGES=true pnpm run build:frontend",
-    "deploy": "gh-pages -d dist-react"
+    "deploy": "gh-pages -d dist-react -r https://github.com/Auren-Noct/Carta-Numerologica.git"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
