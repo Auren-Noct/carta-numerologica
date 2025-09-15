@@ -22,7 +22,7 @@
     "dist:win": "pnpm run build:all && electron-builder --win --x64",
     "dist:linux": "pnpm run build:all && electron-builder --linux --x64",
     "dist:mac": "pnpm run build:all && electron-builder --mac --arm64",
-    "predeploy": "GH_PAGES=true pnpm run build:frontend",
+    "predeploy": "cross-env GH_PAGES=true pnpm run build:frontend",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react-swc": "^4.0.0",
+    "cross-env": "^10.0.0",
     "electron": "^38.0.0",
     "electron-builder": "^26.0.12",
     "eslint": "^9.33.0",
