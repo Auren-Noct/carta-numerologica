@@ -2,6 +2,7 @@
   "name": "carta-numerologica",
   "private": true,
   "version": "2.0.0",
+  "homepage": "https://Auren-Noct.github.io/carta-numerologica/",
   "description": "Calculadora de Numerología",
   "author": {
     "name": "Walter Marcos Crespin",
@@ -20,7 +21,9 @@
     "preview": "vite preview",
     "dist:win": "pnpm run build:all && electron-builder --win --x64",
     "dist:linux": "pnpm run build:all && electron-builder --linux --x64",
-    "dist:mac": "pnpm run build:all && electron-builder --mac --arm64"
+    "dist:mac": "pnpm run build:all && electron-builder --mac --arm64",
+    "predeploy": "GH_PAGES=true pnpm run build:frontend",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
@@ -38,6 +41,7 @@
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",

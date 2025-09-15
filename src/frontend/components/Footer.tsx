@@ -13,6 +13,7 @@ const Footer = () => {
           className="inline-block bg-white text-orange-400 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 mb-6 shadow-lg"
           target="_blank"
           rel="noopener noreferrer"
+          title="Alias MP: walter.m.crespin"
         >
           💰 Reconoce el valor 💰
         </a>
