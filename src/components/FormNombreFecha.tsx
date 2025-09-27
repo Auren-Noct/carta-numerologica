@@ -8,6 +8,7 @@ import TablaCompatibilidad from "./TablaCompatibilidad";
 import TablaConversion from "./TablaConversion";
 import CTA from "./CTA";
 import { CalculosProvider } from "../context/CalculosContext";
+import FormInput from "./FormInput";
 
 const FormNombreFecha = () => {
   const [nombreCompleto, setNombreCompleto] = useState("");
@@ -39,54 +40,30 @@ const FormNombreFecha = () => {
   return (
     <div className="container mx-auto my-12 p-4">
       <form onSubmit={handleSubmit} className="mb-8">
-        <div className="mb-4">
-          <label
-            htmlFor="formNombre"
-            className="block text-gray-900 font-bold mb-2"
-          >
-            Nombre Completo:
-          </label>
-          <input
-            id="formNombre"
-            type="text"
-            className="shadow-sm appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:border-teal-500 focus:shadow-outline-teal"
-            value={nombreCompleto}
-            onChange={(e) => setNombreCompleto(e.target.value)}
-            placeholder="Ej.: Ramón Félix Martorell"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="formFecha"
-            className="block text-gray-900 font-bold mb-2"
-          >
-            Fecha:
-          </label>
-          <input
-            id="formFecha"
-            type="date"
-            className="shadow-sm appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:border-teal-500 focus:shadow-outline-teal"
-            value={fecha}
-            onChange={(e) => setFecha(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="formFechaCompanero"
-            className="block text-gray-900 font-bold mb-2"
-          >
-            Fecha de la pareja (Opcional):
-          </label>
-          <input
-            id="formFechaCompanero"
-            type="date"
-            className="shadow-sm appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:border-teal-500 focus:shadow-outline-teal"
-            value={fechaCompanero}
-            onChange={(e) => setFechaCompanero(e.target.value)}
-          />
-        </div>
+        <FormInput
+          id="formNombre"
+          label="Nombre Completo:"
+          type="text"
+          value={nombreCompleto}
+          onChange={(e) => setNombreCompleto(e.target.value)}
+          placeholder="Ej.: Ramón Félix Martorell"
+          required
+        />
+        <FormInput
+          id="formFecha"
+          label="Fecha:"
+          type="date"
+          value={fecha}
+          onChange={(e) => setFecha(e.target.value)}
+          required
+        />
+        <FormInput
+          id="formFechaCompanero"
+          label="Fecha de la pareja (Opcional):"
+          type="date"
+          value={fechaCompanero}
+          onChange={(e) => setFechaCompanero(e.target.value)}
+        />
         <button
           type="submit"
           className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-red"
