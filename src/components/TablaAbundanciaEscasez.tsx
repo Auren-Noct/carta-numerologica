@@ -1,16 +1,11 @@
-import React from "react";
+import { memo } from "react";
+import { useCalculos } from "../context/CalculosContext";
 
-type Props = {
-  numerosFrecuencia: number[];
-  numerosMasAltos: number[];
-  numerosMasBajos: number[];
-};
-
-const TablaAbundaciaEscasez = ({
-  numerosFrecuencia,
-  numerosMasAltos,
-  numerosMasBajos,
-}: Props) => {
+const TablaAbundaciaEscasez = () => {
+  const datosCalculados = useCalculos();
+  if (!datosCalculados) return null;
+  const { numerosFrecuencia, numerosMasAltos, numerosMasBajos } =
+    datosCalculados;
   const numeros = Array.from({ length: 9 }, (_, i) => i + 1);
 
   return (
@@ -56,4 +51,4 @@ const TablaAbundaciaEscasez = ({
   );
 };
 
-export default React.memo(TablaAbundaciaEscasez);
+export default memo(TablaAbundaciaEscasez);

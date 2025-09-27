@@ -1,0 +1,10 @@
+export { default as CTA } from "./CTA";
+export { default as Footer } from "./Footer";
+export { default as FormNombreFecha } from "./FormNombreFecha";
+export { default as Header } from "./Header";
+export { default as TablaAbundanciaEscasez } from "./TablaAbundanciaEscasez";
+export { default as TablaCompatibilidad } from "./TablaCompatibilidad";
+export { default as TablaConversion } from "./TablaConversion";
+export { default as TablaEquivalencias } from "./TablaEquivalencias";
+export { default as TablaReduccionFecha } from "./TablaReduccionFecha";
+export { default as TablaTiraPrincipal } from "./TablaTiraPrincipal";

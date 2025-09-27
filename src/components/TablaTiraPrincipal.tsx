@@ -1,38 +1,25 @@
-import React from "react";
+import { memo } from "react";
+import { useCalculos } from "../context/CalculosContext";
 
-type Props = {
-  diaFecha: string | number;
-  reduccionDia: string | number;
-  sumaFecha: number;
-  reduccionFecha: string | number;
-  sumaVocales: number;
-  reduccionVocales: string | number;
-  sumaConsonantes: number;
-  reduccionConsonantes: string | number;
-  sumaTemperamento: string | number;
-  reduccionTemperamento: string | number;
-  sumaMision: number;
-  reduccionMision: string | number;
-  sumaMetaFinal: number;
-  reduccionMetaFinal: string | number;
-};
-
-const TablaTiraPrincipal = ({
-  diaFecha,
-  reduccionDia,
-  sumaFecha,
-  reduccionFecha,
-  sumaVocales,
-  reduccionVocales,
-  sumaConsonantes,
-  reduccionConsonantes,
-  sumaTemperamento,
-  reduccionTemperamento,
-  sumaMision,
-  reduccionMision,
-  sumaMetaFinal,
-  reduccionMetaFinal,
-}: Props) => {
+const TablaTiraPrincipal = () => {
+  const datosCalculados = useCalculos();
+  if (!datosCalculados) return null;
+  const {
+    diaFecha,
+    reduccionDia,
+    sumaFecha,
+    reduccionFecha,
+    sumaVocales,
+    reduccionVocales,
+    sumaConsonantes,
+    reduccionConsonantes,
+    sumaTemperamento,
+    reduccionTemperamento,
+    sumaMision,
+    reduccionMision,
+    sumaMetaFinal,
+    reduccionMetaFinal,
+  } = datosCalculados;
   const filas = [
     {
       label: "Camino de vida o sendero",
@@ -108,4 +95,4 @@ const TablaTiraPrincipal = ({
     </div>
   );
 };
-export default React.memo(TablaTiraPrincipal);
+export default memo(TablaTiraPrincipal);

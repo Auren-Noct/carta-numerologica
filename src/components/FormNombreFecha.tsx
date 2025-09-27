@@ -7,21 +7,26 @@ import TablaAbundanciaEscasez from "./TablaAbundanciaEscasez";
 import TablaCompatibilidad from "./TablaCompatibilidad";
 import TablaConversion from "./TablaConversion";
 import CTA from "./CTA";
+import { CalculosProvider } from "../context/CalculosContext";
 
 const FormNombreFecha = () => {
   const [nombreCompleto, setNombreCompleto] = useState("");
   const [fecha, setFecha] = useState("");
   const [fechaCompanero, setFechaCompanero] = useState("");
-  const [mostrarCalculos, setMostrarCalculos] = useState(() => {
-    const valorPersistido = localStorage.getItem("mostrarCalculos");
-    return valorPersistido !== null ? JSON.parse(valorPersistido) : false;
-  });
+  const [mostrarCalculos, setMostrarCalculos] = useState(false);
 
   const datosCalculados = useCalculosNumerologicos(
     nombreCompleto,
     fecha,
     fechaCompanero
   );
+
+  useEffect(() => {
+    const valorPersistido = localStorage.getItem("mostrarCalculos");
+    if (valorPersistido !== null) {
+      setMostrarCalculos(JSON.parse(valorPersistido));
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("mostrarCalculos", JSON.stringify(mostrarCalculos));
@@ -91,39 +96,16 @@ const FormNombreFecha = () => {
       </form>
 
       {datosCalculados && (
-        <>
-          <TablaTiraPrincipal
-            diaFecha={datosCalculados.diaFecha}
-            reduccionDia={datosCalculados.reduccionDia}
-            sumaFecha={datosCalculados.sumaFecha}
-            reduccionFecha={datosCalculados.reduccionFecha}
-            sumaVocales={datosCalculados.sumaVocales}
-            reduccionVocales={datosCalculados.reduccionVocales}
-            sumaConsonantes={datosCalculados.sumaConsonantes}
-            reduccionConsonantes={datosCalculados.reduccionConsonantes}
-            sumaTemperamento={datosCalculados.sumaTemperamento}
-            reduccionTemperamento={datosCalculados.reduccionTemperamento}
-            sumaMision={datosCalculados.sumaMision}
-            reduccionMision={datosCalculados.reduccionMision}
-            sumaMetaFinal={datosCalculados.sumaMetaFinal}
-            reduccionMetaFinal={datosCalculados.reduccionMetaFinal}
-          />
-          <TablaAbundanciaEscasez
-            numerosFrecuencia={datosCalculados.numerosFrecuencia}
-            numerosMasAltos={datosCalculados.numerosMasAltos}
-            numerosMasBajos={datosCalculados.numerosMasBajos}
-          />
-          {datosCalculados.reduccionFechaCompanero && (
-            <TablaCompatibilidad
-              reduccionFecha={datosCalculados.reduccionFecha}
-              diaFecha={datosCalculados.diaFecha}
-              reduccionFechaCompanero={datosCalculados.reduccionFechaCompanero}
-              diaCompanero={datosCalculados.diaCompanero}
-            />
-          )}
-          {datosCalculados && <CTA />}
+        <CalculosProvider value={datosCalculados}>
+          <TablaTiraPrincipal />
+          <TablaAbundanciaEscasez />
+          {datosCalculados.reduccionFechaCompanero && <TablaCompatibilidad />}
+          <CTA />
           <div className="mt-16 mb-8 flex items-center">
-            <label className="inline-flex items-center cursor-pointer">
+            <label
+              htmlFor="toggleCalculos"
+              className="inline-flex items-center cursor-pointer"
+            >
               <input
                 id="toggleCalculos"
                 type="checkbox"
@@ -139,24 +121,12 @@ const FormNombreFecha = () => {
           </div>
           {mostrarCalculos && (
             <>
-              <TablaEquivalencias
-                nombreCompleto={datosCalculados.nombreCompleto}
-                vocales={datosCalculados.vocales}
-                consonantes={datosCalculados.consonantes}
-                sumaVocales={datosCalculados.sumaVocales}
-                sumaConsonantes={datosCalculados.sumaConsonantes}
-                reduccionVocales={datosCalculados.reduccionVocales}
-                reduccionConsonantes={datosCalculados.reduccionConsonantes}
-              />
-              <TablaReduccionFecha
-                fechaNumeros={datosCalculados.fechaNumeros}
-                sumaFecha={datosCalculados.sumaFecha}
-                reduccionFecha={datosCalculados.reduccionFecha}
-              />
+              <TablaEquivalencias />
+              <TablaReduccionFecha />
               <TablaConversion />
             </>
           )}
-        </>
+        </CalculosProvider>
       )}
     </div>
   );

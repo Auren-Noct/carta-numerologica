@@ -1,24 +1,18 @@
-import React from "react";
+import { memo } from "react";
+import { useCalculos } from "../context/CalculosContext";
 
-type Props = {
-  nombreCompleto: string;
-  vocales: (number | null)[];
-  consonantes: (number | null)[];
-  sumaVocales: number;
-  sumaConsonantes: number;
-  reduccionVocales: number | string;
-  reduccionConsonantes: number | string;
-};
-
-const TablaEquivalencias = ({
-  nombreCompleto,
-  vocales,
-  consonantes,
-  sumaVocales,
-  reduccionVocales,
-  sumaConsonantes,
-  reduccionConsonantes,
-}: Props) => {
+const TablaEquivalencias = () => {
+  const datosCalculados = useCalculos();
+  if (!datosCalculados) return null;
+  const {
+    nombreCompleto,
+    vocales,
+    consonantes,
+    sumaVocales,
+    reduccionVocales,
+    sumaConsonantes,
+    reduccionConsonantes,
+  } = datosCalculados;
   const nombreArray = nombreCompleto.split("");
 
   return (
@@ -140,4 +134,4 @@ const TablaEquivalencias = ({
     </div>
   );
 };
-export default React.memo(TablaEquivalencias);
+export default memo(TablaEquivalencias);

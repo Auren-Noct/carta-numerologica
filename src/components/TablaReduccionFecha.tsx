@@ -1,16 +1,10 @@
-import React from "react";
+import { memo } from "react";
+import { useCalculos } from "../context/CalculosContext";
 
-type Props = {
-  fechaNumeros: number[];
-  sumaFecha: number;
-  reduccionFecha: string | number;
-};
-
-const TablaReduccionFecha = ({
-  fechaNumeros,
-  sumaFecha,
-  reduccionFecha,
-}: Props) => {
+const TablaReduccionFecha = () => {
+  const datosCalculados = useCalculos();
+  if (!datosCalculados) return null;
+  const { fechaNumeros, sumaFecha, reduccionFecha } = datosCalculados;
   const datosFila1 = [...fechaNumeros, sumaFecha, reduccionFecha];
 
   return (
@@ -52,4 +46,4 @@ const TablaReduccionFecha = ({
     </div>
   );
 };
-export default React.memo(TablaReduccionFecha);
+export default memo(TablaReduccionFecha);

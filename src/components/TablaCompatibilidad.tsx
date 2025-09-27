@@ -1,18 +1,11 @@
-import React from "react";
+import { memo } from "react";
+import { useCalculos } from "../context/CalculosContext";
 
-type Props = {
-  reduccionFecha: string | number;
-  diaFecha: string | number;
-  reduccionFechaCompanero: string | number | null;
-  diaCompanero: string | number | null;
-};
-
-const TablaCompatibilidad = ({
-  reduccionFecha,
-  diaFecha,
-  reduccionFechaCompanero,
-  diaCompanero,
-}: Props) => {
+const TablaCompatibilidad = () => {
+  const datosCalculados = useCalculos();
+  if (!datosCalculados) return null;
+  const { reduccionFecha, diaFecha, reduccionFechaCompanero, diaCompanero } =
+    datosCalculados;
   return (
     <div className="my-8">
       <h3 className="text-2xl font-semibold mb-4 text-teal-700">
@@ -57,4 +50,4 @@ const TablaCompatibilidad = ({
   );
 };
 
-export default React.memo(TablaCompatibilidad);
+export default memo(TablaCompatibilidad);

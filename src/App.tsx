@@ -1,6 +1,4 @@
-import Footer from "./components/Footer";
-import FormNombreFecha from "./components/FormNombreFecha";
-import Header from "./components/Header";
+import { Footer, FormNombreFecha, Header } from "./components";
 
 function App() {
   return (
