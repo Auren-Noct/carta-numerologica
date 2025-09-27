@@ -13,17 +13,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:electron": "electron .",
-    "build:frontend": "tsc -b && vite build",
-    "build:electron": "tsc --project src/electron/tsconfig.json",
-    "build:all": "pnpm run build:frontend && pnpm run build:electron",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dist:win": "pnpm run build:all && electron-builder --win --x64",
-    "dist:linux": "pnpm run build:all && electron-builder --linux --x64",
-    "dist:mac": "pnpm run build:all && electron-builder --mac --arm64",
-    "predeploy": "cross-env GH_PAGES=true pnpm run build:frontend",
-    "deploy": "gh-pages -d dist-react -r https://github.com/Auren-Noct/Carta-Numerologica.git"
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist -r https://github.com/Auren-Noct/Carta-Numerologica.git"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
@@ -36,9 +30,6 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react-swc": "^4.0.0",
-    "cross-env": "^10.0.0",
-    "electron": "^38.0.0",
-    "electron-builder": "^26.0.12",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",

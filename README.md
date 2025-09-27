@@ -2,7 +2,7 @@
 
 Esta es una aplicación web que calcula la carta numerológica de una persona utilizando la **Técnica Yoel**. El objetivo del proyecto es proporcionar una herramienta digital que automatice los cálculos de este método, facilitando el acceso y la comprensión de sus principios.
 
-### 📝 Sobre la Técnica Yoel
+## 📝 Sobre la Técnica Yoel
 
 Este proyecto no es una herramienta de numerología general, sino una calculadora específica para la técnica desarrollada por **Eduardo Dharma Yoel**. Para obtener más información sobre los fundamentos y la interpretación de esta técnica, puedes visitar su sitio oficial: [www.eduardodharmayoel.com](https://www.eduardodharmayoel.com).
 
@@ -33,39 +33,41 @@ Para ejecutar el proyecto en tu máquina local, tienes dos opciones:
 
 #### Opción 1: Con Docker (Recomendado)
 
-1.  **Clona el repositorio:**
+1. **Clona el repositorio:**
 
-    ```bash
-    git clone https://github.com/Auren-Noct/calculadora-numerologica.git
-    cd calculadora-numerologica
-    ```
+   ```bash
+   git clone https://github.com/Auren-Noct/calculadora-numerologica.git
+   cd calculadora-numerologica
+   ```
 
-2.  **Inicia la aplicación con Docker:**
-    ```bash
-    docker-compose up --build
-    ```
+2. **Inicia la aplicación con Docker:**
+
+   ```bash
+   docker-compose up --build
+   ```
 
 La aplicación estará disponible en `http://localhost:5173`.
 
 #### Opción 2: Sin Docker
 
-1.  **Clona el repositorio:**
+1. **Clona el repositorio:**
 
-    ```bash
-    git clone https://github.com/Auren-Noct/calculadora-numerologica.git
-    cd calculadora-numerologica
-    ```
+   ```bash
+   git clone https://github.com/Auren-Noct/calculadora-numerologica.git
+   cd calculadora-numerologica
+   ```
 
-2.  **Instala las dependencias con pnpm:**
+2. **Instala las dependencias con pnpm:**
 
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
-3.  **Inicia la aplicación en modo desarrollo:**
-    ```bash
-    pnpm run dev
-    ```
+3. **Inicia la aplicación en modo desarrollo:**
+
+   ```bash
+   pnpm run dev
+   ```
 
 La aplicación estará disponible en `http://localhost:5173`. Si tienes problemas de conexión, revisa la configuración de tu firewall o usa la dirección IP de tu red local.
 
@@ -81,11 +83,5 @@ La aplicación estará disponible en `http://localhost:5173`. Si tienes problema
 
 - **Demo en GitHub Pages:** [Auren-Noct.github.io/carta-numerologica](https://auren-noct.github.io/carta-numerologica)
 - **Sitio oficial:** [luzdevida.xyz/carta-numerologica](https://luzdevida.xyz/carta-numerologica)
-
----
-
-### TODOLIST
-
-- Agregar Logo y background a la página
 
 ---
