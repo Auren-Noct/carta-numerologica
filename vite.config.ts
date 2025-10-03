@@ -21,6 +21,14 @@ export default defineConfig({
         short_name: "NumCalc",
         description: "Calculadora Numerológica basada en la Técnica Yoel.",
         theme_color: "#ffffff",
+        background_color: "#ffffff",
+        start_url: "/carta-numerologica/",
+        scope: "/carta-numerologica/",
+        display: "standalone",
+        categories: ["utilities", "lifestyle"],
+        lang: "es",
+        orientation: "any",
+        id: "/",
         icons: [
           {
             src: "android-chrome-192x192.png",
@@ -47,6 +55,16 @@ export default defineConfig({
             type: "image/png",
             form_factor: "narrow",
             label: "Vista móvil de la Calculadora Numerológica",
+          },
+        ],
+        shortcuts: [
+          {
+            name: "Calcular Carta",
+            short_name: "Calcular",
+            description:
+              "Abrir la calculadora para generar una nueva carta numerológica",
+            url: "/carta-numerologica/",
+            icons: [{ src: "android-chrome-192x192.png", sizes: "192x192" }],
           },
         ],
       },
