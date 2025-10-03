@@ -10,7 +10,12 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.ico", "apple-touch-icon.png"],
+      includeAssets: [
+        "favicon.ico",
+        "apple-touch-icon.png",
+        "screenshot-desktop.png",
+        "screenshot-mobile.png",
+      ],
       manifest: {
         name: "Calculadora Numerológica",
         short_name: "NumCalc",
@@ -26,6 +31,22 @@ export default defineConfig({
             src: "android-chrome-512x512.png",
             sizes: "512x512",
             type: "image/png",
+          },
+        ],
+        screenshots: [
+          {
+            src: "screenshot-desktop.png",
+            sizes: "1280x720",
+            type: "image/png",
+            form_factor: "wide",
+            label: "Vista de escritorio de la Calculadora Numerológica",
+          },
+          {
+            src: "screenshot-mobile.png",
+            sizes: "540x720",
+            type: "image/png",
+            form_factor: "narrow",
+            label: "Vista móvil de la Calculadora Numerológica",
           },
         ],
       },
