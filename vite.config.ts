@@ -28,7 +28,7 @@ export default defineConfig({
         categories: ["utilities", "lifestyle"],
         lang: "es",
         orientation: "any",
-        id: "/",
+        id: "/carta-numerologica/",
         icons: [
           {
             src: "android-chrome-192x192.png",
